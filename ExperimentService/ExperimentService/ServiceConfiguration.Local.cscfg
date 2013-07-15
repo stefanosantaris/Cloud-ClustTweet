@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="ExperimentService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="MyWebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://webroletoexperiment.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=23+3X/hCrWX51BIz/ZKUdqmR6Ie7Mdipl4TVOCybIGU=" />
+      <Setting name="Microsoft.TableStorage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="ClusteringWorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://webroletoexperiment.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=23+3X/hCrWX51BIz/ZKUdqmR6Ie7Mdipl4TVOCybIGU=" />
+      <Setting name="Microsoft.TableStorage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="ExperimentWorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://webroletoexperiment.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=23+3X/hCrWX51BIz/ZKUdqmR6Ie7Mdipl4TVOCybIGU=" />
+      <Setting name="Microsoft.TableStorage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="JsonParserWorkerRole">
+    <Instances count="5" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://webroletoexperiment.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=23+3X/hCrWX51BIz/ZKUdqmR6Ie7Mdipl4TVOCybIGU=" />
+      <Setting name="Microsoft.TableStorage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+      <Setting name="Microsoft.DatabaseStorage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=databasestorager;AccountKey=qfuS5lsWeBIfKauIT8h72hhU+CCa+LO5hXozBLXij2jXX38VVgqFT1IFPBnLRfwpn7DsdelK/qOgeaWCPQe/qw==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="TextPreprocessorWorkerRole">
+    <Instances count="5" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://webroletoexperiment.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=23+3X/hCrWX51BIz/ZKUdqmR6Ie7Mdipl4TVOCybIGU=" />
+      <Setting name="Microsoft.TableStorage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="IndexWorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://webroletoexperiment.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=23+3X/hCrWX51BIz/ZKUdqmR6Ie7Mdipl4TVOCybIGU=" />
+      <Setting name="Microsoft.TableStorage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=experinments;AccountKey=q766WxYAbqqIQrawSiATxieqXHGIWeknWchBFO7B5mIlZlhz9l7vkp+rnCKM4X4s9QcpPpuCpcjcZHq2RnKVFw==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

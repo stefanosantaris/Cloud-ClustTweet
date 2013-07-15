@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MyWebRole.Models.ExperimentModels>
+@{
+    ViewBag.Title = "ExperimentList";
+}
+
+<h2>Experiments</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Training File</th>
+        <th>Testing File</th>
+        <th>Dimensionality</th>
+        <th>Starting DateTime</th>
+        <th>Ending Date Time</th>
+        <th>Clustering File</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.experimentName)
+            </td>
+            <td>
+                <a href="@item.trainingFile" >Download</a>
+            </td>
+            <td>
+                <a href="@item.testingFile" >Download</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dimensionality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stopTime)
+            </td>
+                <td>
+             @if (item.clusterFile.Equals(string.Empty))
+            {
+                    <p>No Clusters created yet</p>
+            }  else {
+                    <a href="@item.clusterFile">Download</a>;
+            }
+                    </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

@@ -1,0 +1,51 @@
+﻿@model MyWebRole.Models.ExperimentModels
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Experiment", FormMethod.Post, new { enctype="multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Experiment</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.experimentName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.experimentName)
+            @Html.ValidationMessageFor(model => model.experimentName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.trainingFile)
+        </div>
+        <input type="file" name="trainingFile" id="trainingFile" />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.testingFile)
+        </div>
+        <input type="file" name="testingFile" id="testingFile" />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dimensionality)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dimensionality)
+            @Html.ValidationMessageFor(model => model.dimensionality)
+        </div>
+    </fieldset>
+    
+    
+    <p>
+       <input type="submit" value="Create" /> 
+    </p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
